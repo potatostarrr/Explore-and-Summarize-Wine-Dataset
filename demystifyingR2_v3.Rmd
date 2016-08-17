@@ -1,0 +1,58 @@
+
+Project4 Explore red wine data
+---------------------------------------------------
+1.In this project, we will explore different red wine based on their chemical components and their rank.
+First of all, let's take a quick look at this dataset.
+
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library()
+
+rw <-  read.csv('wineQualityReds.csv')
+str(rw)
+summary(rw)
+names(rw)
+
+```
+From the result, we can see there are 13 variables incluing 11 chemical components and 'quality'.
+It seems like every components will influence our final qulity.
+Before we explore multiple variables, we need to explore single variable one by one.
+
+
+----------------------------------------------------
+2.Check single variable
+
+Create a function show_variable to inspect realtionship between single variable and quality
+```{r}
+show_variable <- function(dataset,name){
+    qplot(data = dataset , x = name )
+}
+
+```
+
+
+fixed.acidity:
+```{r}
+compnents <- names(rw)[2:12]
+str(rw[compnents[1]])
+summary(rw[compnents[1]])
+qplot(data = rw , x = rw[compnents[1]] ,binwidth = 1 ) + scale_x_continuous(breaks = seq(4.6,15.9,1)) 
+names(rw)
+```
+"volatile.acidity":
+"citric.acid":
+ "residual.sugar"  :
+ chlorides":
+ "free.sulfur.dioxide":
+ "total.sulfur.dioxide":
+ "density":
+ "pH":
+ "sulphates":
+  "alcohol" :
+  
+
+
+
+
